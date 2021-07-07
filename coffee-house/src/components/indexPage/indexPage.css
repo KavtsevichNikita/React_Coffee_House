@@ -1,0 +1,10 @@
+header{
+    position: relative;
+    background: url(./main_page/main_picture.png) center center/cover no-repeat;
+    height: 640px;
+}
+.our_best{
+    height: 495px;
+    background: url(./main_page/Mask_Group.png) center center/cover no-repeat ;
+}
+
