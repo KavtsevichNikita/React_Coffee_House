@@ -228,8 +228,6 @@ useEffect(() =>{
                   <PhoneInput 
                   className="input_phone"
                   value={input.value}
-                  name="phone" 
-                  id="phone"
                   onChange={setValue}
                   placeholder="Введите номер телефона" />
                 </div>

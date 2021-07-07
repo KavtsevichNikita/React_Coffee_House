@@ -68,7 +68,7 @@ export default function Pleasure() {
         {/* Разделитель */}
         {/* Cart */}
         {/* <div class="container">   */}
-        <div className="cart_of_coffee_all">
+        <div className="cart_of_coffee_pleasure">
           <Goods/>
         </div>                             
         {/* </div> */}

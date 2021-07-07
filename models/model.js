@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const Users = {
     name:String,
     email:String,
-    phone:Number,
+    phone:String,
     message:String
 }
 

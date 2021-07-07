@@ -24,6 +24,7 @@ router.route("/contact").post((req,res) => {
 router.route("/users").get((req,res) => {
     User.find()
             .then(foundUsers => res.json(foundUsers))
+
 })
 
 module.exports = router;
