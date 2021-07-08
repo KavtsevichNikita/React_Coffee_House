@@ -81,13 +81,6 @@ export default function Product() {
 
 
 
-
-
-
-
-
-
-
       <div className="productBottom">
           <form className="productForm">
               <div className="productFormLeft">

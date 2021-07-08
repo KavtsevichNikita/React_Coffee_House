@@ -27,11 +27,6 @@ function App() {
           <Route path='/coffee/:id' component={About_it}/>
         </Switch>
       </BrowserRouter> 
-      {/* <IndexPage/>  
-        <Our_coffee/> 
-       <Pleasure/>
-      <ContactUs/>
-      <About_it/>  */}
     </div>
   );
 }

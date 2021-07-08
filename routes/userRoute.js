@@ -2,6 +2,7 @@ const express = require("express")
 const router = express.Router();
 const User = require("../models/model")
 
+
 //
 
 router.route("/contact").post((req,res) => {
@@ -21,10 +22,16 @@ router.route("/contact").post((req,res) => {
         newUser.save();
 })
 
-router.route("/users").get((req,res) => {
-    User.find()
-            .then(foundUsers => res.json(foundUsers))
+router.get('/contact', async (req,res) =>{
+    try {
+        
+        const user = await User.find()
+        res.json(user)
 
+    } catch (error) {
+        console.log(error)
+    }
 })
+
 
 module.exports = router;

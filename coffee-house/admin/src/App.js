@@ -15,10 +15,7 @@ function App() {
       <div className="container">
         <Sidebar />
         <Switch>
-          <Route path="/home" exact>
-            <Home />
-          </Route>
-          <Route path="/users">
+          <Route path="/users" exact>
             <UserList />
           </Route>
           <Route path="/products">

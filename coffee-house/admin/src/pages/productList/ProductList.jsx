@@ -3,9 +3,27 @@ import { DataGrid } from "@material-ui/data-grid";
 import { DeleteOutline } from "@material-ui/icons";
 import { Coffee } from "../../dummyData";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import React, {useEffect, useState } from "react";
+import { Table } from 'reactstrap';
 
 export default function ProductList() {
+
+    const [products, setProducts] = useState([{
+      file:'',
+      name: '',
+      country:'',
+      descr: '',
+      price: ''
+    }])
+
+    useEffect(() =>{
+      fetch("/productsList").then(res =>{
+        if(res.ok) {
+            return res.json()
+        }
+      }).then(jsonRes => setProducts(jsonRes))
+    })
+
   const [data, setData] = useState(Coffee);
 
   const handleDelete = (id) => {
@@ -16,18 +34,7 @@ export default function ProductList() {
  
   const columns = [
     { field: "id", headerName: "ID", width: 110 },
-    {
-      field: "Url",
-      headerName: "Image",
-      width: 200,
-      renderCell: (params) => {
-        return (
-          <div className="productListItem">
-            <img className="productListImg" src={params.row.url} alt="" />
-          </div>
-        );
-      },
-    },
+    
     {
       field: "Product",
       headerName: "Product",
@@ -97,4 +104,20 @@ export default function ProductList() {
       />
     </div>
   );
+
+
+  return <div className="productList">
+    
+    {
+      products.map(products =>{
+        <div>
+        <h1>{products.file}</h1>
+        <h1>{products.name}</h1>
+        <h1>{products.country}</h1>
+        <h1>{products.descr}</h1>
+        <h1>{products.price}</h1>
+        </div>
+      })
+    }
+  </div>
 }
